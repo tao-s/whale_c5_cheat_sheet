@@ -6,7 +6,7 @@
 
 ## 目次 <!-- omit in toc -->
 - [Application ($app)](#application-app)
-  - [controllerで$app](#app-in-a-controller)
+  - [コントローラーで$app](#app-in-a-controller)
   - [カスタムクラスでの$app](#app-in-a-custom-class)
   - [その他の場所での$app](#app-in-other-places)
 - [スーパーグローバル変数](#superglobals)
@@ -22,25 +22,25 @@
     - [ページ属性の取得](#get-a-page-attribute)
     - [ページ属性一覧の取得](#get-list-of-attributes-of-a-page)
   - [ページの一覧](#list-of-pages)
-    - [Get list of pages](#get-list-of-pages)
-    - [Get list of pages with pagination](#get-list-of-pages-with-pagination)
-    - [Filter a page list](#filter-a-page-list)
-    - [Sort a page list](#sort-a-page-list)
+    - [ページ一覧の取得](#get-list-of-pages)
+    - [ページ一覧ページネーションの取得](#get-list-of-pages-with-pagination)
+    - [ページ一覧の絞り込み](#filter-a-page-list)
+    - [ページ一覧の並び替え](#sort-a-page-list)
   - [ページ操作](#page-operations)
-    - [Add a page](#add-a-page)
-    - [Update a page](#update-a-page)
-    - [Delete a page](#delete-a-page)
-    - [Move a page](#move-a-page)
-    - [Copy a Page](#copy-a-page)
-    - [Add an extra location URL](#add-an-extra-location-url)
-    - [Set/Update an attribute of a page](#setupdate-an-attribute-of-a-page)
-    - [Clear an attribute of a page](#clear-an-attribute-of-a-page)
-    - [Refresh page cache](#refresh-page-cache)
+    - [ページの追加](#add-a-page)
+    - [ページの更新](#update-a-page)
+    - [ページの削除](#delete-a-page)
+    - [ページの移動](#move-a-page)
+    - [ページのコピー](#copy-a-page)
+    - [ページへのURLの追加](#add-an-extra-location-url)
+    - [ページ属性の追加/更新](#setupdate-an-attribute-of-a-page)
+    - [ページ属性のクリア](#clear-an-attribute-of-a-page)
+    - [ページキャッシュのクリア](#refresh-page-cache)
   - [属性](#attributes)
-    - [Get an attribute](#get-an-attribute)
-    - [Add an attribute](#add-an-attribute)
-    - [Delete an attribute](#delete-an-attribute)
-    - [Get all attribute keys](#get-all-attribute-keys)
+    - [属性の取得](#get-an-attribute)
+    - [属性の追加](#add-an-attribute)
+    - [属性の削除](#delete-an-attribute)
+    - [全ての属性キーの取得](#get-all-attribute-keys)
   - [属性セット](#attribute-sets)
     - [Get an attribute set](#get-an-attribute-set)
     - [Get an attribute set data](#get-an-attribute-set-data)
@@ -2055,16 +2055,16 @@ $default = -1;
 ```PHP
 //\concrete\bootstrap\helpers.php
 
-// Translate text (simple form).
+// 文字列の翻訳 (シンプル).
 t($text);
 
-// Translate text (plural form).
+// 文字列の翻訳 (値の埋め込みあり).
 t2($singular, $plural, $number);
 
-//Translate text (simple form) with a context.
+// 文字列の翻訳 (simple form) with a context.
 tc($context, $text);
 
-// Security helper.
+// 文字列のエスケープ.
 h($input);
 
 // Returns $string in CamelCase.
